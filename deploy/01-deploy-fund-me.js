@@ -1,5 +1,10 @@
+/* This Script is used to deploy FundMe.sol contract
+    Deploy: 'yarn hardhat deploy --tags fundme --network networkname'
+ */
+
 const { networkConfig, developmentChains } = require("../helper-hardhat-config") // to manage different chains
 const { network } = require("hardhat")
+const { verify } = require("../utils/verify")
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deploy, log } = deployments
@@ -29,6 +34,12 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         args: [ethUsdPriceFeedAddress],
         log: true,
     })
+
+    // If it is deployed on a real network -> verify our contract
+    if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
+        await verify(fundMe.address, [ethUsdPriceFeedAddress])
+    }
+
     log("--------------------------------")
 }
 

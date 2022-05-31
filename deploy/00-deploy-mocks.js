@@ -1,5 +1,5 @@
 /* This Script is used to deploy Mocked contracts 
-    Deploy: 'yarn hardhat deploy --tags mocks --network networkname'
+    Deploy: 'yarn hardhat deploy --tags mocks'
  */
 
 const { network } = require("hardhat")
