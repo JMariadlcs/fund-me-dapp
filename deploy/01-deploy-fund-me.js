@@ -1,3 +1,4 @@
+const { networkConfig } = require("../helper-hardhat-config") // to manage different chains
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deploy, log } = deployments
@@ -5,11 +6,12 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     const chainId = network.config.chainId
 
     // Use chainId to select different arguments depending on the chain we are deploying -> MULTICHAIN 
-    let ethUsdPriceFeedAddress
-    if (chainId == 31337) {
+    const ethUsdPriceFeedAddress = networkConfig[chainId]["ethUsdPriceFeed"]
+
+    if (chainId == 31337) { // hardhat local network -> In this Network it does not exist a priceAggregator so we need to deploy our MockV3Aggregator in this network to use it
         const ethUsdAggregator = await deployments.get("MockV3Aggregator")
         ethUsdPriceFeedAddress = ethUsdAggregator.address
-    } else {
+    } else { // get corresponding address depending on deployed network
         ethUsdPriceFeedAddress = networkConfig[chainId]["ethUsdPriceFeed"]
     }
 

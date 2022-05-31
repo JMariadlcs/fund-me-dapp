@@ -39,8 +39,11 @@ require("hardhat-deploy");
 ```
 
 ## Reminders
-- If you want to execute solhint to search for potential Solidity errors
+- To setup an environment able to deploy on different networks check the code inside [helper-hardhat-config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/helper-hardhat-config.js).
 
+- To test on localhost o hardhat network we can not use a PriceAggregator address because it does not exist. We need to deploy a MockAggregator that behaves as a real one.
+
+- If you want to execute solhint to search for potential Solidity errors
 Execute: 
 ```bash
 yar solhint contracts/*.sol
