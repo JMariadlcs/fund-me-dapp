@@ -41,7 +41,9 @@ require("hardhat-deploy");
 ## Reminders
 - To setup an environment able to deploy on different networks check the code inside [helper-hardhat-config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/helper-hardhat-config.js).
 
-- To test on localhost o hardhat network we can not use a PriceAggregator address because it does not exist. We need to deploy a MockAggregator that behaves as a real one. Check [00-deploy-mocks.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/deploy/00-deploy-mocks.js).
+- To test on localhost o hardhat network we can not use a PriceAggregator address because it does not exist. We need to deploy a MockAggregator that behaves as a real one. Check [test folder](https://github.com/JMariadlcs/fund-me-dapp/tree/main/contracts/test) and [00-deploy-mocks.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/deploy/00-deploy-mocks.js).
+
+Some Mocks can be directly imported from [Chainlink Github repo](https://github.com/smartcontractkit/chainlink/tree/develop/contracts/src/v0.6/tests) as it is done in [MockV3Aggregator.sol](https://github.com/JMariadlcs/fund-me-dapp/blob/main/contracts/test/MockV3Aggregator.sol).
 
 - If you want to execute solhint to search for potential Solidity errors
 Execute: 
