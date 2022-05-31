@@ -9,6 +9,15 @@ const networkConfig = {
     },
 }
 
+const developmentChains = ["hardhat", "localhost"]
+
+// GLOBAL VARIABLES FOR MOCKV3AGGREGATOR
+const DECIMALS = 8
+const INITIAL_ANSWER = 20000000000
+
 module.exports = {
     networkConfig,
+    developmentChains,
+    DECIMALS,
+    INITIAL_ANSWER
 }

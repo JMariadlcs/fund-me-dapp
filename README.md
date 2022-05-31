@@ -38,6 +38,16 @@ yarn add --dev @chainlink/contracts hardhat-deploy
 require("hardhat-deploy");
 ```
 
+## How to deploy
+
+- To deploy Mocked contracts (only done in local network or hardhat network):
+```bash
+ yarn hardhat deploy --tags mocks
+ ```
+
+If you dont especify on which network you want to deploy the contract it will choose hardhat network (configured in [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/hardhat.config.js)).
+
+
 ## Reminders
 - To setup an environment able to deploy on different networks check the code inside [helper-hardhat-config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/helper-hardhat-config.js).
 
