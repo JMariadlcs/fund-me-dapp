@@ -24,7 +24,7 @@ yarn add --dev @nomiclabs/hardhat-waffle@^2.0.0 ethereum-waffle@^3.0.0 chai@^4.2
 ```
 
 - Install chainlink dependencies and others:
-``bash
+```bash
 yarn add --dev @chainlink/contracts hardhat-deploy
 ```
 
