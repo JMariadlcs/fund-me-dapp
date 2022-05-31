@@ -28,6 +28,11 @@ yarn add --dev @nomiclabs/hardhat-waffle@^2.0.0 ethereum-waffle@^3.0.0 chai@^4.2
 yarn add --dev @chainlink/contracts hardhat-deploy
 ```
 
+- Include the following like inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/hardhat.config.js)
+```bash
+require("hardhat-deploy");
+```
+
 ## Reminders
 - If you want to execute solhint to search for potential Solidity errors
 
