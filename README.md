@@ -86,3 +86,18 @@ Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-d
 ```bash
 require("hardhat-gas-reporter");
 ```
+
+- Use Solidity Coverage:
+```bash
+yarn add --dev solidity-coverage
+```
+
+Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/helper-hardhat-config.js):
+```bash
+require("solidity-cove");
+```
+
+In order to execute it:
+```bash
+yarn hardhat coverage
+```
