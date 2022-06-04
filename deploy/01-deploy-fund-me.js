@@ -35,7 +35,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         log: true,
     })
 
-    // If it is deployed on a real network -> verify our contract
+    // If it is deployed on a real network -> verify our contract && we have included etherscan API KET inside .env
     if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
         await verify(fundMe.address, [ethUsdPriceFeedAddress])
     }

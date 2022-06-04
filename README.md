@@ -74,3 +74,15 @@ Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-d
 ```bash
 require("@nomiclabs/hardhat-etherscan");
 ```
+
+Add `ETHERSCAN_API_KEY` inside `.env` file.
+
+- Use Hardhat Gas Reporter:
+```bash
+yarn add --dev hardhat-gas-reporter
+```
+
+Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/helper-hardhat-config.js):
+```bash
+require("hardhat-gas-reporter");
+```
