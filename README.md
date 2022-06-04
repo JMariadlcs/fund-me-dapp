@@ -63,3 +63,14 @@ yar solhint contracts/*.sol
 
 - If you want to use a text formarter:
 Check [.prettierrc](https://github.com/JMariadlcs/fund-me-dappp/blob/main/.prettierrc) and [.prettierignore](https://github.com/JMariadlcs/fund-me-dappp/blob/main/.prettierignore).
+
+- To automatically verify our contract on etherscan:
+
+```bash
+yarn add --dev @nomiclabs/hardhat-etherscan
+```
+
+Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/helper-hardhat-config.js):
+```bash
+require("@nomiclabs/hardhat-etherscan");
+```
