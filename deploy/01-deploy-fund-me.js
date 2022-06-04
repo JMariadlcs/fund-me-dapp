@@ -1,5 +1,5 @@
 /* This Script is used to deploy FundMe.sol contract
-    Deploy: 'yarn hardhat deploy --tags fundme --network networkname'
+    Deploy: 'yarn hardhat deploy --tags fundme --network rinkeby'
  */
 
 const { networkConfig, developmentChains } = require("../helper-hardhat-config") // to manage different chains
@@ -33,9 +33,10 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         from: deployer,
         args: [ethUsdPriceFeedAddress],
         log: true,
+        waitConfirmations: network.config.blockConfirmations || 1,
     })
 
-    // If it is deployed on a real network -> verify our contract && we have included etherscan API KET inside .env
+    // If it is deployed on a real network (not local one) -> verify our contract && we have included etherscan API KET inside .env
     if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
         await verify(fundMe.address, [ethUsdPriceFeedAddress])
     }

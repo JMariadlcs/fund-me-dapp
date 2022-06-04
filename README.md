@@ -42,10 +42,15 @@ require("hardhat-deploy");
 
 - To deploy Mocked contracts (only done in local network or hardhat network):
 ```bash
- yarn hardhat deploy --tags mocks
+yarn hardhat deploy --tags mocks
  ```
 
 If you dont especify on which network you want to deploy the contract it will choose hardhat network (configured in [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/hardhat.config.js)).
+
+- To deploy FundMe.sol contract (example done in Rinkeby network - just change network name):
+```bash
+yarn hardhat deploy --tags fundme --network rinkeby
+ ```
 
 
 ## Reminders
