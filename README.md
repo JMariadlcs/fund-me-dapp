@@ -101,3 +101,14 @@ In order to execute it:
 ```bash
 yarn hardhat coverage
 ```
+
+- Use Hardhat Waffle:
+```bash
+yarn add @nomiclabs/hardhat-waffle
+```
+
+Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/helper-hardhat-config.js):
+```bash
+require("@nomiclabs/hardhat-waffle");
+```
+
