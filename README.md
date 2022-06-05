@@ -1,4 +1,4 @@
-# FUND ME DAPP ✅
+# FUND ME DAPP BACKEND✅
 
 This is a simple Backend implementation of a fund-me dApp from Patrick Alpha's Free Code Camp course.
 
@@ -9,6 +9,15 @@ The workshop followed to complete this repo is [this one](https://github.com/Pat
 The repo that we are going to implement is like [this one](https://www.youtube.com/watch?v=gyMwXuJrbJQ&t=15996s).
 
 ## PROJECT
+
+This is a project where a FundMe dApp is created. This repo contains the backend of a full stack project. The frontend repo is [here](https://github.com/JMariadlcs/html-fund-me-fcc)
+
+This repo contains:
+
+1. How to make the Smart Contracts ✅
+2. How to deploy dinamycally in a testnet or locally ✅
+3. Hoy to create unit and integrated tests ✅
+4. How to create scripts locally ✅
 
 ## CREATE SIMILAR PROJECT FROM SCRATCH
 
