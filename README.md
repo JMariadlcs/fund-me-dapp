@@ -7,9 +7,9 @@ The workshop followed to complete this repo is [this one](https://github.com/Pat
 
 The repo that we are going to implement is like [this one](https://www.youtube.com/watch?v=gyMwXuJrbJQ&t=15996s).
 
-## Project
+## PROJECT
 
-## Requirements for creating similar projects from scratch
+## CREATE SIMILAR PROJECT FROM SCRATCH
 
 - Install yarn and start hardhat project:
 ```bash
@@ -38,7 +38,7 @@ yarn add --dev @chainlink/contracts hardhat-deploy
 require("hardhat-deploy");
 ```
 
-## How to deploy
+## HOW TO DEPLOY
 
 - To deploy Mocked contracts (only done in local network or hardhat network):
 ```bash
@@ -52,8 +52,24 @@ If you dont especify on which network you want to deploy the contract it will ch
 yarn hardhat deploy --tags fundme --network rinkeby
  ```
 
+## HOW TO TEST
 
-## Reminders
+Two types of tests are created for this project:
+
+1. "Unit tests" inside [unit](): used to test functions separately
+2. "Integration tests" inside [staging](): used to test entire contracts
+
+To execute tests:
+```bash
+yarn hardhat test
+```
+
+and to see test coverage:
+```bash
+yarn hardhat coverage
+```
+
+## REMINDERS
 - To setup an environment able to deploy on different networks check the code inside [helper-hardhat-config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/helper-hardhat-config.js).
 
 - To test on localhost o hardhat network we can not use a PriceAggregator address because it does not exist. We need to deploy a MockAggregator that behaves as a real one. Check [test folder](https://github.com/JMariadlcs/fund-me-dapp/tree/main/contracts/test) and [00-deploy-mocks.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/deploy/00-deploy-mocks.js).
