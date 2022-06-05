@@ -1,4 +1,4 @@
-/**  Script used to execute unit testing
+/**  Script used to execute unit testing -> ONLY ON DEVELOPMENT CHAINS
 *    To execute all the test: yarn hardhat test
 *    To execute a single test (eg.1st test): yarn hardhat test --grep "sets the aggregator"
 *    To see coverage: yarn hardhat coverage
@@ -7,6 +7,8 @@
 const { assert, expect} = require("chai")
 const { deployments, ethers, getNamedAccounts } = require("hardhat")
 
+// check we are in a development chain
+!developmentChains.includes(network.name) ? describe.skip :
 describe("FundMe", async function () {
     let fundMe
     let deployer
@@ -77,7 +79,7 @@ describe("FundMe", async function () {
             assert.equal(startingFundMeBalance.add(startingDeployerBalance).toString(), endingeployerBalance.add(gasCost).toString()) // use .add() to work with bigNumber type || rest gasCost
         })
 
-        it("allow us to withdraw with multiple funders", async function () {
+        it("allow us to withdraw with multiple funders - cheaperWithdraw", async function () {
             // Arrange
             const accounts = await ethers.getSigners()
             for(let i = 1; i < 6; i++) { // Connect contract with different accounts (not only deployer) -> to allow execute functions 
@@ -88,7 +90,7 @@ describe("FundMe", async function () {
             const startingDeployerBalance = await fundMe.provider.getBalance(deployer)
 
             // Act
-            const transactionResponse = await fundMe.withdraw()
+            const transactionResponse = await fundMe.cheaperWithdraw()
             const transactionReceipt = await transactionResponse.wait(1)
             const { gasUsed, effectiveGasPrice } = transactionReceipt 
             const gasCost = gasUsed.mul(effectiveGasPrice) 
