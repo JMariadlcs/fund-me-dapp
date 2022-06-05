@@ -64,8 +64,8 @@ yarn hardhat deploy --tags fundme --network rinkeby
 
 Two types of tests are created for this project:
 
-1. "Unit tests" inside [unit](): used to test functions separately
-2. "Integration tests" inside [staging](): used to test entire contracts
+1. "Unit tests" inside [unit](https://github.com/JMariadlcs/fund-me-dapp/tree/main/test/unit): used to test functions separately
+2. "Integration tests" inside [staging](https://github.com/JMariadlcs/fund-me-dapp/tree/main/test/staging): used to test entire contracts
 
 To execute tests **unit tests** (on development chain):
 
@@ -89,6 +89,20 @@ and to see test coverage:
 
 ```bash
 yarn hardhat coverage
+```
+
+## HOW TO RUN SCRIPTS LOCALLY
+
+First, start local node
+
+```bash
+yarn hardhat node
+```
+
+Then, open a new terminal and execute scripts:
+
+```bash
+yarn hardhat run scripts/fund.js --network localhost
 ```
 
 ## REMINDERS

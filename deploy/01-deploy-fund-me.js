@@ -11,7 +11,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deployer } = await getNamedAccounts()
     const chainId = network.config.chainId
 
-    // Use chainId to select different arguments depending on the chain we are deploying -> MULTICHAIN 
+    // Use chainId to select different arguments depending on the chain we are deploying -> MULTICHAIN
     let ethUsdPriceFeedAddress
     if (developmentChains.includes(network.name)) {
         const ethUsdAggregator = await deployments.get("MockV3Aggregator")
@@ -21,10 +21,12 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     }
 
     log("Deploying FundMe and waiting for confirmations...")
-    if (chainId == 31337) { // hardhat local network -> In this Network it does not exist a priceAggregator so we need to deploy our MockV3Aggregator in this network to use it
+    if (chainId == 31337) {
+        // hardhat local network -> In this Network it does not exist a priceAggregator so we need to deploy our MockV3Aggregator in this network to use it
         const ethUsdAggregator = await deployments.get("MockV3Aggregator")
         ethUsdPriceFeedAddress = ethUsdAggregator.address
-    } else { // get corresponding address depending on deployed network
+    } else {
+        // get corresponding address depending on deployed network
         ethUsdPriceFeedAddress = networkConfig[chainId]["ethUsdPriceFeed"]
     }
 
@@ -37,7 +39,10 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     })
 
     // If it is deployed on a real network (not local one) -> verify our contract && we have included etherscan API KET inside .env
-    if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
+    if (
+        !developmentChains.includes(network.name) &&
+        process.env.ETHERSCAN_API_KEY
+    ) {
         await verify(fundMe.address, [ethUsdPriceFeedAddress])
     }
 
