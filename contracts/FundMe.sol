@@ -3,6 +3,7 @@
 pragma solidity ^0.8.0;
 // 2. Imports
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+import "hardhat/console.sol";
 import "./PriceConverter.sol";
 
 // 3. Interfaces, Libraries, Contracts
