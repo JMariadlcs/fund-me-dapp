@@ -1,3 +1,7 @@
+/* This Script is used to run a script 
+    Deploy: 'yarn hardhat run scripts/withdraw.js --network localhost'
+ */
+
 const { ethers, getNamedAccounts } = require("hardhat")
 
 async function main() {

@@ -1,4 +1,4 @@
-/* This Script is used to deploy Mocked contracts 
+/* This Script is used to deploy Mocked contracts -> MOCKS ONLY ON DEVELOPMENT NETWORK
     Deploy: 'yarn hardhat deploy --tags mocks'
  */
 
