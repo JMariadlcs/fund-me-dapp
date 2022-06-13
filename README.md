@@ -126,7 +126,7 @@ Some Mocks can be directly imported from [Chainlink Github repo](https://github.
     Execute:
 
 ```bash
-yar solhint contracts/*.sol
+yarn solhint contracts/*.sol
 ```
 
 -   If you want to use a text formarter:
@@ -138,7 +138,7 @@ yar solhint contracts/*.sol
 yarn add --dev @nomiclabs/hardhat-etherscan
 ```
 
-Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/helper-hardhat-config.js):
+Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/hardhat-config.js):
 
 ```bash
 require("@nomiclabs/hardhat-etherscan");
@@ -152,7 +152,7 @@ Add `ETHERSCAN_API_KEY` inside `.env` file.
 yarn add --dev hardhat-gas-reporter
 ```
 
-Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/helper-hardhat-config.js):
+Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/hardhat-config.js):
 
 ```bash
 require("hardhat-gas-reporter");
@@ -164,10 +164,10 @@ require("hardhat-gas-reporter");
 yarn add --dev solidity-coverage
 ```
 
-Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/helper-hardhat-config.js):
+Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/hardhat-config.js):
 
 ```bash
-require("solidity-cove");
+require("solidity-coverage");
 ```
 
 In order to execute it:
@@ -182,7 +182,7 @@ yarn hardhat coverage
 yarn add @nomiclabs/hardhat-waffle
 ```
 
-Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/helper-hardhat-config.js):
+Then, include inside [hardhat.config.js](https://github.com/JMariadlcs/fund-me-dapp/blob/main/hardhat-config.js):
 
 ```bash
 require("@nomiclabs/hardhat-waffle");
